@@ -17,9 +17,6 @@ export type {
 export { EthereumProvider } from "@ganache/core";
 import type { ConnectorsByName } from "@ganache/flavors";
 export type FilecoinProvider = ConnectorsByName["filecoin"];
-export {
-  server,
-  provider
-} from "@ganache/core";
+export { server, provider } from "@ganache/core";
 import Ganache from "@ganache/core";
 export default Ganache;

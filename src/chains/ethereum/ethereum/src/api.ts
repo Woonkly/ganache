@@ -1044,7 +1044,10 @@ export default class EthereumApi implements Api {
    * ```
    */
   @assertArgLength(1, 2)
-  async eth_getBlockByNumber<IncludeTransactions extends boolean = false>(number: QUANTITY | Tag, transactions?: IncludeTransactions): Promise<Ethereum.Block<IncludeTransactions, "internal"> | null> {
+  async eth_getBlockByNumber<IncludeTransactions extends boolean = false>(
+    number: QUANTITY | Tag,
+    transactions?: IncludeTransactions
+  ): Promise<Ethereum.Block<IncludeTransactions, "internal"> | null> {
     if (typeof transactions === "undefined") {
       transactions = false as IncludeTransactions;
     }
@@ -1106,7 +1109,10 @@ export default class EthereumApi implements Api {
    * ```
    */
   @assertArgLength(1, 2)
-  async eth_getBlockByHash<IncludeTransactions extends boolean = false>(hash: DATA, transactions?: IncludeTransactions): Promise<Ethereum.Block<IncludeTransactions, "internal"> | null> {
+  async eth_getBlockByHash<IncludeTransactions extends boolean = false>(
+    hash: DATA,
+    transactions?: IncludeTransactions
+  ): Promise<Ethereum.Block<IncludeTransactions, "internal"> | null> {
     if (typeof transactions === "undefined") {
       transactions = false as IncludeTransactions;
     }
