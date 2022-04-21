@@ -2672,7 +2672,7 @@ export default class EthereumApi implements Api {
    * console.log(result);
    * ```
    */
-  @assertArgLength(1, 2)
+  @assertArgLength(1, 3)
   async eth_call(
     transaction: Ethereum.CallTransaction,
     blockNumber: QUANTITY | Tag = Tag.latest,
