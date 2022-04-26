@@ -1,18 +1,15 @@
 import { Data } from "@ganache/utils";
+import { DataTypeSource } from "../../../packages/utils/src/things/json-rpc/json-rpc-base-types";
 
 export class Address extends Data {
-  static ByteLength = 20;
+  public static ByteLength = 20;
+  public static Empty = Address.from(Buffer.alloc(0));
 
-  /**
-   *
-   * @param value -
-   * @param byteLength - the exact length the value represents when encoded as
-   * Ethereum JSON-RPC DATA.
-   */
-  constructor(value: string | Buffer) {
+  constructor(value: DataTypeSource) {
     super(value, Address.ByteLength);
   }
-  public static from<T extends string | Buffer = string | Buffer>(value: T) {
+
+  public static from(value: DataTypeSource) {
     return new Address(value);
   }
 }
